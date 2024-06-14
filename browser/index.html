@@ -1,21 +1,54 @@
 <!doctype html>
 <html>
   <head>
+    <title>BartoszBrowser</title>
     <style>
       body {
         background-color: #333;
         font-family: 'Roboto';
+        margin: 0;
+        padding: 0;
       }
       .fullscreen-btn {
         display: flex;
         cursor: pointer;
         align-items: center;
+        color: #fff;
+        padding: 8px;
       }
       .fullscreen-text {
         margin-left: 8px;
       }
+      .browser {
+        background-color: #444;
+        padding: 10px;
+        color: #fff;
+        width: 100%;
+        box-sizing: border-box;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      }
+      .browser input[type="search"] {
+        width: 100%;
+        padding: 8px;
+        border: none;
+        background-color: #555;
+        color: #fff;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      .news {
+        font-size: 18px;
+      }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   </head>
   <body>
     <div class="fullscreen-btn" onclick="toggleFullscreen()">
@@ -24,7 +57,15 @@
       </span>
       <span class="fullscreen-text" id="fullscreen-text">Fullscreen</span>
     </div>
-
+    <div class="browser">
+      <form name="SearchForm">
+        <input type="search" placeholder="Search..." required />
+      </form>
+      <div class="news">
+        <p>News</p>
+        <span class="material-symbols-outlined">newspaper</span>
+      </div>
+    </div>
     <script>
       function toggleFullscreen() {
         if (!document.fullscreenElement) {
